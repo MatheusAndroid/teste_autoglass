@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { ProductService } from '../../application/services/ProductService';
 import { SequelizeProductRepository } from '../../infrastructure/repositories/SequelizeProductRepository';
+import { Product, productValidator } from '../../domain/models/Product';
 
 const productService = new ProductService(new SequelizeProductRepository());
 
@@ -13,5 +14,25 @@ async function getAllProducts(req: Request, res: Response) {
     const products = await productService.getProducts();
     res.sendStatus(200).json(products);
 }
+async function createProduct(req: Request, res: Response) { 
+    const body: Product = req.body;
+    const errors = productValidator(res, body);
+    if (errors.length) { 
+        return res.sendStatus(400).json({errors: errors});
+    }
+    const product = await productService.createProduct(body);
+    res.sendStatus(200).json(product);
+}
 
-export { getProductById, getAllProducts }
+async function updateProduct(req: Request, res: Response) { 
+    const body: Product = req.body;
+    const errors = productValidator(res, body);
+    if (errors.length) { 
+        return res.sendStatus(400).json({errors: errors});
+    }
+    const id = parseInt(req.params.id, 10);
+    const product = await productService.updateProduct(id, body);
+    res.sendStatus(200).json(product);
+}
+
+export { getProductById, getAllProducts, createProduct, updateProduct }

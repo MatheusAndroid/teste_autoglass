@@ -10,6 +10,12 @@ class ProductService {
     async getProducts(): Promise<Product[]> {
         return await this.productRepository.findAll();
     }
+    async createProduct(item: Product): Promise<Product> {
+        return await this.productRepository.create(item);
+    }
+    async updateProduct(id: number, item: Product): Promise<Product> {
+        return await this.productRepository.update(id, item);
+    }
 }
 
 export { ProductService };
