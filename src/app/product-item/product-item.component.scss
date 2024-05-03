@@ -1,0 +1,30 @@
+.product-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .product-details {
+    margin-bottom: 10px;
+  }
+  
+  .edit-form {
+    display: none; /* Escondido por padrão */
+  }
+  
+  .edit-form.active {
+    display: block; /* Visível no modo de edição */
+  }
+
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Altura mínima para cobrir a tela inteira */
+
+    /* Background Glassmorfismo */
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px); /* Intensidade do blur */
+    border-radius: 10px; /* Arredondamento dos cantos */
+    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1); /* Sombra interna */
+ }
