@@ -1,0 +1,42 @@
+<div class="product-item">
+    <h2>Novo Produto</h2>
+    
+  <div class="edit-form">
+    <form [formGroup]="editForm">
+      <mat-form-field>
+        <input matInput formControlName="name" placeholder="Nome do Produto">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-checkbox formControlName="active">Ativo</mat-checkbox>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" formControlName="manufacturing" placeholder="Fabricação">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker2" formControlName="expiration" placeholder="Validade">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput formControlName="supplierCode" placeholder="Código Fornecedor">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <textarea matInput formControlName="supplierDescription" placeholder="Descrição Fornecedor"></textarea>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput formControlName="cnpj" placeholder="CNPJ">
+      </mat-form-field>
+  
+      <button mat-raised-button (click)="saveProduct()" [disabled]="editForm.valid">Salvar</button>
+      <button mat-raised-button (click)="cancelCreating()">Cancelar</button>
+    </form>
+  </div>
+  
