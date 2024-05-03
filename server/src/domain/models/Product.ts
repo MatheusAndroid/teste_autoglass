@@ -17,7 +17,7 @@ function productValidator(res: Response, product: Product) : String[]{
     const keys = Object.keys(product);
     mustHaveKeys.forEach((key: string) => { 
         if (!keys.includes(key) || (product as any)[key] == '') {
-            res.status(400).send({ error: `Campo ${key} é obrigatório` });
+            errorsFound.push( `Campo ${key} é obrigatório`);
             return false;
         }
     })

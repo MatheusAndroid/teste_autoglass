@@ -18,6 +18,9 @@ module.exports = {
     supplierCode: { type: DataTypes.STRING },
     supplierDescription: { type: DataTypes.STRING },
     cnpj: { type: DataTypes.STRING, unique: true },
+    createdAt: { type: DataTypes.DATE },
+    updatedAt: { type: DataTypes.DATE },
+    
     }, {
       timestamps: true
     });

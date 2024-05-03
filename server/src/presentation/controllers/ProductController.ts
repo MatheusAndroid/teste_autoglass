@@ -12,13 +12,13 @@ async function getProductById(req: Request, res: Response) {
 }
 async function getAllProducts(req: Request, res: Response) { 
     const products = await productService.getProducts();
-    res.sendStatus(200).json(products);
+    res.status(200).json(products);
 }
 async function createProduct(req: Request, res: Response) { 
     const body: Product = req.body;
     const errors = productValidator(res, body);
     if (errors.length) { 
-        return res.sendStatus(400).json({errors: errors});
+        return res.status(400).json({errors: errors});
     }
     const product = await productService.createProduct(body);
     res.sendStatus(200).json(product);
@@ -28,11 +28,11 @@ async function updateProduct(req: Request, res: Response) {
     const body: Product = req.body;
     const errors = productValidator(res, body);
     if (errors.length) { 
-        return res.sendStatus(400).json({errors: errors});
+        return res.status(400).json({errors: errors});
     }
     const id = parseInt(req.params.id, 10);
     const product = await productService.updateProduct(id, body);
-    res.sendStatus(200).json(product);
+    res.status(200).json(product);
 }
 
 export { getProductById, getAllProducts, createProduct, updateProduct }
