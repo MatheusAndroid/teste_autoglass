@@ -8,7 +8,7 @@ const productService = new ProductService(new SequelizeProductRepository());
 async function getProductById(req: Request, res: Response) { 
     const { id } = req.params;
     const user = await productService.getProductById(parseInt(id, 10));
-    res.sendStatus(200).json(user);
+    res.status(200).json(user);
 }
 async function getAllProducts(req: Request, res: Response) { 
     const products = await productService.getProducts();
@@ -20,8 +20,12 @@ async function createProduct(req: Request, res: Response) {
     if (errors.length) { 
         return res.status(400).json({errors: errors});
     }
-    const product = await productService.createProduct(body);
-    res.sendStatus(200).json(product);
+    try {
+        const product = await productService.createProduct(body);
+        res.status(200).json(product);
+    } catch (error: any) {
+        res.status(500).json({ errors: error.errors.map((e: { message: any; })=> e.message)});
+     } 
 }
 
 async function updateProduct(req: Request, res: Response) { 
