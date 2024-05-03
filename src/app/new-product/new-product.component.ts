@@ -24,11 +24,12 @@ export class NewProductComponent implements OnInit {
     supplierDescription: new FormControl(null, [Validators.required]),
     cnpj: new FormControl('', [Validators.required]),
   });
-
+  isActive = this.editForm?.get('active')?.value;
   ngOnInit(): void {
   }
 
   saveProduct() { 
+    this.editForm.get('active')?.setValue(this.isActive)
     if (this.editForm.valid) {
       // Criar o produto no serviço e na lista de produtos
       this.productsService.updateProduct(this.editForm.value).subscribe((value) => { 

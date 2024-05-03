@@ -29,6 +29,8 @@ export class ProductItemComponent implements OnInit {
     supplierDescription: new FormControl(null, [Validators.required]),
     cnpj: new FormControl(null, [Validators.required]),
   });
+  isActive = this.editForm?.get('active')?.value;
+
   ngOnInit(): void {
     this.id = parseInt(this.activatedRoute.snapshot.params['id'], 10); // Obtendo o ID do produto
     this.product = JSON.parse(this.activatedRoute.snapshot.queryParams['product']); // Obtendo dados adicionais

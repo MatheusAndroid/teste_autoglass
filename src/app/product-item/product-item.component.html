@@ -19,9 +19,7 @@
         <input matInput formControlName="name" placeholder="Nome do Produto">
       </mat-form-field>
   
-      <mat-form-field>
-        <mat-checkbox formControlName="active">Ativo</mat-checkbox>
-      </mat-form-field>
+      <mat-checkbox matCheckbox  [(ngModel)]="isActive" placeholder="Ativo">Ativo</mat-checkbox>
   
       <mat-form-field>
         <input matInput [matDatepicker]="picker" formControlName="manufacturing" placeholder="Fabricação">

@@ -11,7 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ProductItemComponent } from './product-item/product-item.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NewProductComponent } from './new-product/new-product.component';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -43,7 +43,8 @@ import {MatInputModule} from '@angular/material/input';
     MatSlideToggleModule,
     MatCheckboxModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule 
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
