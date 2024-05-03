@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../models/product.model';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { DatePipe } from '@angular/common';
 import { ProductsService } from '../service/products.service';
 
 @Component({
@@ -14,7 +13,6 @@ export class ProductItemComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private datePipe: DatePipe,
     private productsService: ProductsService,
     private router: Router
   ) { }
@@ -23,13 +21,13 @@ export class ProductItemComponent implements OnInit {
   id: number = 0;
   isEditing = false;
   editForm: FormGroup = new FormGroup({
-    name: new FormControl('', [Validators.required]),
-    active: new FormControl(''),
-    manufacturing: new FormControl('', [Validators.required]),
-    expiration: new FormControl('', [Validators.required]),
-    supplierCode: new FormControl('', [Validators.required]),
-    supplierDescription: new FormControl('', [Validators.required]),
-    cnpj: new FormControl('', [Validators.required]),
+    name: new FormControl(null, [Validators.required]),
+    active: new FormControl(false),
+    manufacturing: new FormControl(null, [Validators.required]),
+    expiration: new FormControl(null, [Validators.required]),
+    supplierCode: new FormControl(null, [Validators.required]),
+    supplierDescription: new FormControl(null, [Validators.required]),
+    cnpj: new FormControl(null, [Validators.required]),
   });
   ngOnInit(): void {
     this.id = parseInt(this.activatedRoute.snapshot.params['id'], 10); // Obtendo o ID do produto

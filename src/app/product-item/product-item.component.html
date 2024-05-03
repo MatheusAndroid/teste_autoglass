@@ -1,4 +1,4 @@
-<div class="product-item">
+<div class="container">
     <h2>{{ product?.name }}</h2>
   
     <div class="product-details">
@@ -47,8 +47,8 @@
         <input matInput formControlName="cnpj" placeholder="CNPJ">
       </mat-form-field>
   
-      <button mat-raised-button (click)="saveProduct()" [disabled]="editForm.valid">Salvar</button>
-      <button mat-raised-button (click)="cancelEdit()" >Cancelar</button>
     </form>
+    <button type="button" class="save" mat-raised-button (click)="saveProduct()" [disabled]="editForm.valid">Salvar</button>
+    <button type="button" class="cancel"  mat-raised-button (click)="cancelEdit()" >Cancelar</button>
   </div>
   

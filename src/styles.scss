@@ -37,3 +37,28 @@ $vidros-theme: mat.define-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.container{
+  padding: 10vw 10vh;
+  background-color: #bacbf2;
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  mat-form-field{
+    width: calc(24.9999% - 10px);
+  }
+}
+.save{
+  background-color: #183884;
+  color: white;
+  margin-right: 10px !important;
+}
+.cancel{
+  color: #183884;
+}

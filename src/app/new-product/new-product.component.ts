@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProductsService } from '../service/products.service';
-import { DatePipe } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,18 +11,17 @@ import { Router } from '@angular/router';
 export class NewProductComponent implements OnInit {
 
   constructor(
-    private datePipe: DatePipe,
     private productsService: ProductsService,
     private router: Router
   ) { }
 
   editForm: FormGroup = new FormGroup({
     name: new FormControl('', [Validators.required]),
-    active: new FormControl(''),
-    manufacturing: new FormControl('', [Validators.required]),
-    expiration: new FormControl('', [Validators.required]),
+    active: new FormControl(true),
+    manufacturing: new FormControl(null, [Validators.required]),
+    expiration: new FormControl(null, [Validators.required]),
     supplierCode: new FormControl('', [Validators.required]),
-    supplierDescription: new FormControl('', [Validators.required]),
+    supplierDescription: new FormControl(null, [Validators.required]),
     cnpj: new FormControl('', [Validators.required]),
   });
 
