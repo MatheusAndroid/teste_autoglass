@@ -16,6 +16,9 @@ class ProductService {
     async updateProduct(id: number, item: Product): Promise<Product> {
         return await this.productRepository.update(id, item);
     }
+    async deleteProduct(id: number): Promise<Product> {
+        return await this.productRepository.delete(id);
+    }
 }
 
 export { ProductService };

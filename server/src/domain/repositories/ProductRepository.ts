@@ -5,6 +5,7 @@ interface ProductRepository {
     findAll(): Promise<Product[]>;
     create(product: Product): Promise<Product>;
     update(id: string | number, product : Product): Promise<Product>;
+    delete(id: string | number): Promise<Product>;
 }
 
 export { ProductRepository }
