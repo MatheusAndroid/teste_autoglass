@@ -10,7 +10,6 @@ Feito usando Typescript/Sequelize/Express/MySQL para a API.
 
 Desenvolvido com Angular
 
-
 ## Como executar o backend do projeto
 
 - Iniciar um conteiner em Docker para iniciar o banco de dados
@@ -20,5 +19,7 @@ Ir à pasta raiz do projeto
 ```cd server```
 
 Instalar as dependências e executar o projeto
-
-```npm i && npm start```
+- Na primeira vez
+```npm first-run```
+- Nas próximas vezes
+```npm start```
