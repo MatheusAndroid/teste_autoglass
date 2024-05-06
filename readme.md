@@ -10,3 +10,15 @@ Feito usando Typescript/Sequelize/Express/MySQL para a API.
 
 Desenvolvido com Angular
 
+
+## Como executar o backend do projeto
+
+- Iniciar um conteiner em Docker para iniciar o banco de dados
+```docker run --name vidros  -e MYSQL_ROOT_PASSWORD=vidros -e MYSQL_DATABASE=dbautoglass -e MYSQL_USER=dev -e MYSQL_PASSWORD=vidros -p 3307:3306 -d mysql:latest```
+
+Ir à pasta raiz do projeto
+```cd server```
+
+Instalar as dependências e executar o projeto
+
+```npm i && npm start```
