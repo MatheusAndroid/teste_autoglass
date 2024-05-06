@@ -10,6 +10,8 @@ Feito usando Typescript/Sequelize/Express/MySQL para a API.
 
 Desenvolvido com Angular
 
+link: https://github.com/MatheusAndroid/teste_autoglass
+
 ## Como executar o backend do projeto
 
 - Iniciar um conteiner em Docker para iniciar o banco de dados
