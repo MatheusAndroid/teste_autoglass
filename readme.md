@@ -10,7 +10,7 @@ Feito usando Typescript/Sequelize/Express/MySQL para a API.
 
 Desenvolvido com Angular
 
-link: https://github.com/MatheusAndroid/teste_autoglass
+link: https://github.com/MatheusAndroid/front_autoglass
 
 ## Como executar o backend do projeto
 
