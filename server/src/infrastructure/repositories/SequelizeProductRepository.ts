@@ -17,8 +17,7 @@ class SequelizeProductRepository implements ProductRepository {
         return product.toJSON() as Product;
     }
     async update(id: number , product: Product): Promise<any> { 
-        const newProduct = await ProductModel.findByPk(id);
-        newProduct?.update(product);
+        await ProductModel.update(product, { where: {id: id} });
     };
     async delete(id: number): Promise<any> { 
         const newProduct = await ProductModel.destroy({ where: { id: id } });
