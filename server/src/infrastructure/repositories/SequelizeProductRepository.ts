@@ -20,7 +20,7 @@ class SequelizeProductRepository implements ProductRepository {
         await ProductModel.update(product, { where: {id: id} });
     };
     async delete(id: number): Promise<any> { 
-        const newProduct = await ProductModel.destroy({ where: { id: id } });
+        const newProduct = await ProductModel.update({active: false},{ where: { id: id } });
     };
 }
 
